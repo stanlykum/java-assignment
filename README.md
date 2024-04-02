@@ -2,6 +2,7 @@
 
 ## Overall Architecture
 
+![Overall diagram](https://github.com/stanlykum/java-assignment/assets/30554963/c19d4c9e-957a-4903-a304-22f6b2d3799e)
 
 ## How to Run
 ```
