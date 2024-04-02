@@ -1,0 +1,53 @@
+server:
+  port: 8805
+  address: localhost
+
+spring:
+  application:
+    name: price-service
+
+  datasource:
+    url: jdbc:h2:mem:testdb
+    username: sa
+    password:
+    driver-class-name: org.h2.Driver
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+
+eureka:
+  instance:
+    prefer-ip-address: false
+    hostname: localhost
+  metadata-map:
+    startup: ${random.int} #10
+  lease-renewal-interval-in-seconds: 5
+  client:
+    serviceUrl:
+      defaultZone: http://${server.address}:8801/eureka/
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+    endpoint:
+      health:
+        show-details: ALWAYS
+logging:
+  level:
+    root: INFO
+    org.springframework.boot: WARN
+    org.springframework.web: WARN
+    com.netflix: WARN
+
+
+

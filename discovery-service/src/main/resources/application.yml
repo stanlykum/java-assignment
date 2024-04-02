@@ -1,0 +1,46 @@
+server:
+  port: 8801
+  address: localhost
+
+spring:
+  application:
+    name: discovery-service
+
+eureka:
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    registry-fetch-interval-seconds: 3
+    service-url:
+      defaultZone: http://${server.address}:${server.port}/eureka/
+
+  server:
+    wait-time-in-ms-when-sync-empty: 0
+    enable-self-preservation: false
+  instance:
+    metadata-map:
+      startup: ${random.int}
+    health-check-url-path: /actuator/health
+    status-page-url-path: /actuator/info
+    hostname: ${server.address}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+    endpoint:
+      health:
+        show-details: ALWAYS
+
+logging:
+  level:
+    root: INFO
+    org.springframework.boot: WARN
+    org.springframework.web: WARN
+    com.netflix: WARN
+    com.jpmc.collateral: DEBUG
+
+
+
+

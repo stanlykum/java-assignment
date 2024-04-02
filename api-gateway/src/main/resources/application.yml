@@ -1,0 +1,36 @@
+server:
+  port: 8800
+  address: localhost
+
+spring:
+  application:
+    name: api-gateway
+
+eureka:
+  instance:
+    prefer-ip-address: false
+    hostname: localhost
+  metadata-map:
+    startup: ${random.int} #10
+  lease-renewal-interval-in-seconds: 5
+  client:
+    serviceUrl:
+      defaultZone: http://${server.address}:8801/eureka/
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+    endpoint:
+      health:
+        show-details: ALWAYS
+logging:
+  level:
+    root: INFO
+    org.springframework.boot: WARN
+    org.springframework.web: WARN
+    com.netflix: WARN
+
+
+
