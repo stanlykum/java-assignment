@@ -44,6 +44,8 @@
 
 ## Service names and responsibilities
 
+Discovery UI - http://localhost:8801/
+
 
 | service name       | From API gateway| Swagger UI|
 |------------|-------------------|------------------------
