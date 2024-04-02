@@ -49,14 +49,12 @@ public class EligibilityController {
         }
         return eligibilityGeneratorUsecase.getEligibilities(eligibilityRequest.getAccountIDs(), eligibilityRequest.getAssetIDs());
     }
-
     /**
      * This method is used to persist list of eligibility
      *
      * @param eligibilities
      * @return Http status code with 201
      */
-
     @PostMapping("/save")
     @Operation(summary = "Save eligibilities", description = "Save eligibilities for given for the given list of eligibilities.")
     @ApiResponse(responseCode = "201", description = "Success", content = @Content(schema = @Schema(implementation = List.class)))

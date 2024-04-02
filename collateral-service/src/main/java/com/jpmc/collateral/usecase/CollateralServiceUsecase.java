@@ -39,6 +39,7 @@ public class CollateralServiceUsecase implements CollateralService {
      * @param accounts
      * @return The list of Collateral objects
      */
+
     @Override
     @Cacheable(cacheNames = {"positions", "eligibilities", "prices"}, condition = "#result != null && !#result.isEmpty()")
     public List<CollateralValue> calculateCollateralValue(List<String> accounts) {

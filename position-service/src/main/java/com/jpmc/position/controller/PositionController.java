@@ -37,7 +37,6 @@ public class PositionController {
      * @param accountIDs
      * @return This list of position objects
      */
-
     @PostMapping
     @Operation(summary = "Get positions by list of accountIDs", description = "Get positions for the given accountIDs.")
     @ApiResponse(responseCode = "200", description = "Success", content = @Content(schema = @Schema(implementation = List.class)))

@@ -35,6 +35,7 @@ public class PriceController {
      * @param assetIds
      * @return This list of prices objects
      */
+
     @PostMapping("/assetIds")
     @Operation(summary = "Get prices by list of assetIDs", description = "Get prices for the given assetIDs.")
     @ApiResponse(responseCode = "200", description = "Success", content = @Content(schema = @Schema(implementation = List.class)))

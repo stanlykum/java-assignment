@@ -18,6 +18,7 @@ import java.util.List;
  * The method is protected by a circuit breaker, which will call a fallback method
  * if the Position Service is unavailable
  */
+
 @FeignClient(name = "PRICE-SERVICE", configuration = FeignConfiguration.class)
 public interface PriceClient {
 

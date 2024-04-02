@@ -18,6 +18,7 @@ import java.util.List;
  * The method is protected by a circuit breaker, which will call a fallback method
  * if the Eligibility Service is unavailable.
  */
+
 @FeignClient(name = "ELIGIBILITY-SERVICE", configuration = FeignConfiguration.class)
 public interface EligibilityClient {
 
